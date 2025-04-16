@@ -1,0 +1,19 @@
+.info-page {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1920px;
+    height: 1080px;
+    margin: 0 auto;
+}
+
+.info-page__info-column {
+    height: 100%;
+    padding: 10px 30px;
+    background-color: #835858;
+    color: #ebd4d4;
+}
+
+body {
+    background-color: #fff0f0;
+    box-sizing: border-box;
+}
