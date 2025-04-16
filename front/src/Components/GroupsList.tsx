@@ -14,6 +14,12 @@ const GroupsList: FC = () => {
   const isSelected = (id: GroupId) => id === selectedGroupId;
   return (
     <div>
+      <p style={{ cursor: 'pointer', color: selectedGroupId ?  undefined :  'violet'}} onClick={() =>
+            dispatch({
+              type: 'groupSelected',
+              payload: { group_id: undefined },
+            } satisfies GroupSelectedAction)
+          }>Все группы</p>
       {groups.map((group) => (
         <p
           key={group.id}

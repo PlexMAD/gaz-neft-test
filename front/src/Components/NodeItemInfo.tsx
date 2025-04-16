@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 
-const NodeInfo: FC = () => {
+const NodeItemInfo: FC = () => {
     return (
         <div>
             
@@ -8,4 +8,4 @@ const NodeInfo: FC = () => {
     );
 };
 
-export default NodeInfo;
+export default NodeItemInfo;
