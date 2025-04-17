@@ -11,7 +11,15 @@ SELECT
             ),
             'interface', JSON_OBJECT(
                 'id', i.id,
-                'caption', i.caption
+                'caption', i.caption,
+                'status', CASE 
+                    WHEN i.status IS NOT NULL THEN 
+                        JSON_OBJECT(
+                            'color', ist.color,
+                            'description', ist.description
+                        )
+                    ELSE NULL
+                END
             ),
             'application', (
                 SELECT JSON_OBJECT(
@@ -25,7 +33,7 @@ SELECT
             ),
             'admin', JSON_OBJECT(
                 'id', u.id,
-                'name', u.firstname || ' ' || u.lastname
+                'name', COALESCE(u.firstname || ' ' || u.lastname, '')
             )
         )
     ) AS nodes
@@ -39,6 +47,8 @@ LEFT JOIN
     statuses s ON n.status = s.id
 LEFT JOIN 
     interfaces i ON n.interface = i.id
+LEFT JOIN 
+    statuses ist ON i.status = ist.id
 LEFT JOIN 
     users u ON n.admin = u.id
 GROUP BY 

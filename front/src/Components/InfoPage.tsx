@@ -32,7 +32,7 @@ const InfoPage = () => {
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrentHour((prev) => (prev + 1) % 11);
-    }, 3000);
+    }, 1000);
 
     
     return () => clearInterval(intervalId);

@@ -6,6 +6,7 @@ import { useSelector, useDispatch } from 'react-redux';
 type Interface = {
   id: number;
   caption: string;
+  status: Status;
 }
 
 type Application = {
