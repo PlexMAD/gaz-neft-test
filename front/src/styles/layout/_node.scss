@@ -1,0 +1,44 @@
+@use '../utils/variables' as *;
+@use '../utils/mixins' as *;
+.info-page {
+    margin-top: 5px;
+    &__node-short-info {
+      padding: $spacing-sm;
+      @include flex-center(space-between);
+      width: 500px;
+      color: $color-accent;
+      gap: $spacing-sm;
+    }
+  
+    &__node-long-info {
+      display: flex;
+      gap: $spacing-md;
+      flex-grow: 1;
+      color: $color-accent;
+    }
+    &__node-list {
+      display: flex;
+      padding: 1px;
+    }
+    ul {
+      padding: 5px 5px;
+      border-radius: $radius-for-borders;
+      background-color: $color-dark-grey;
+    }
+    &__node-metrics {
+      display: flex;
+      gap: $spacing-md;
+    }
+  
+    &__node-side {
+      display: flex;
+      justify-content: space-between;
+      flex-grow: 1;
+      gap: $spacing-xl;
+  
+      .info-page__node-interface-info {
+        text-align: right;
+      }
+    }
+  }
+  

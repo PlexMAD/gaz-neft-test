@@ -1,3 +1,9 @@
-@use "layout";
-@use "text";
+@use 'utils/variables';
+@use 'utils/mixins';
 
+@use 'base/reset';
+@use 'base/base';
+@use 'base/typography';
+
+@use 'layout/info-page';
+@use 'layout/node';

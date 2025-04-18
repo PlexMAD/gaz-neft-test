@@ -1,0 +1,21 @@
+@use '../utils/variables' as *;
+
+
+body {
+    font-weight: 600;
+    color: #000000;
+  }
+  
+  .info-page__service-header {
+    color: $color-text-dark;
+  }
+  
+  .info-page__group-header {
+    color: $color-blue;
+  }
+  
+  .info-page__node-header {
+    color: $color-white;
+    display: inline-block;
+  }
+  

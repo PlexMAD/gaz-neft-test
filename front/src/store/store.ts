@@ -44,7 +44,6 @@ export type GroupState = {
   entities: Record<GroupId, Group>;
   ids: GroupId[];
   selectedGroupId: GroupId | undefined;
-  selectedNodeId: NodeId | undefined;
 }
 type State = {
   groups: GroupState;
@@ -82,12 +81,7 @@ export type GroupSelectedAction = {
   };
 };
 
-export type NodeSelectedAction = {
-  type: "nodeSelected";
-  payload: {
-    node_id: NodeId;
-  };
-};
+
 
 export type MetricStoredAction = {
   type: "metricStored";
@@ -96,7 +90,7 @@ export type MetricStoredAction = {
   };
 };
 
-export type Action = GroupsStoredAction | GroupSelectedAction | NodeSelectedAction | MetricStoredAction
+export type Action = GroupsStoredAction | GroupSelectedAction  | MetricStoredAction
 
 
 
@@ -104,7 +98,6 @@ const initialGroupState: GroupState = {
   entities: {},
   ids: [],
   selectedGroupId: undefined,
-  selectedNodeId: undefined
 }
 const initialMetricState : MetricState = {
   entities: {},
@@ -144,15 +137,6 @@ const reducer = (state = initialState, action: Action): State => {
             
           }
         }   
-        case 'nodeSelected':
-          const {node_id} = action.payload
-          return {
-            ...state,
-            groups: {
-              ...state.groups,
-              selectedNodeId: node_id, 
-            }
-          }   
         case 'metricStored':
           const {metrics} = action.payload
           return {
