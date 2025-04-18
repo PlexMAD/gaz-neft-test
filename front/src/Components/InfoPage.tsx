@@ -32,7 +32,7 @@ const InfoPage = () => {
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrentHour((prev) => (prev + 1) % 11);
-    }, 1000);
+    }, 60000);
 
     
     return () => clearInterval(intervalId);
@@ -48,10 +48,13 @@ const InfoPage = () => {
   }, [currentHour]); 
 
   return (
-    <div className="info-page">
-      <InfoColumn child={GroupInfo}/>
-      <InfoColumn child={NodeList}/>
-    </div>
+    <>
+      <h1>Текущий час: {currentHour} (Обновление каждую минуту)</h1>
+      <div className="info-page">
+        <InfoColumn child={GroupInfo}/>
+        <InfoColumn child={NodeList}/>
+      </div>
+    </>
   );
 };
 

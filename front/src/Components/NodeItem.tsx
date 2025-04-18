@@ -20,7 +20,8 @@ function returnColor(metricCurrent: number| undefined) {
     else return 'yellow'
 }
 const NodeItem: FC<NodeItemProps> = ({node}) => {
-    const metricForNode = useAppSelector((state) => Object.values(state.metrics.entities).find((metric) => metric.node_id === node.id)) 
+    const metrics = useAppSelector((state) => state.metrics) 
+    const metricForNode = Object.values(metrics.entities).find((metric) => metric.node_id === node.id)
     if (!metricForNode) return null;
     return (
         <div style={{display: 'flex', gap: 10}}>

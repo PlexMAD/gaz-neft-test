@@ -3,9 +3,10 @@ import { useAppSelector } from '../store/store';
 import { getWorstStatus } from '../utils/getWorstStatus';
 
 const ServiceStatusInfo = () => {
-  const allNodes = useAppSelector((state) =>
-    Object.values(state.groups.entities).flatMap((group) => group.nodes)
+  const groups = useAppSelector((state) =>
+    state.groups
   );
+  const allNodes = Object.values(groups.entities).flatMap((group) => group.nodes)
 
   const { status, color } = getWorstStatus(allNodes);
 

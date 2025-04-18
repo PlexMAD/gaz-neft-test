@@ -1,15 +1,11 @@
 .info-page {
     display: flex;
-    max-width: 1920px;
-    gap: 10px;
-    height: 1080px;
     margin: 0 auto;
+
 }
 
 .info-page__info-column {
-    height: 100%;
     padding: 10px 30px;
-    background-color: #835858;
     color: #ebd4d4;
 }
 
@@ -17,8 +13,7 @@ body {
     background-color: #fff0f0;
     box-sizing: border-box;
     margin: 0;
+    font-weight: 600;
+    background-color: #835858;
 }
 
-p {
-    margin: 0;
-}

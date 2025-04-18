@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import { Metric } from '../store/store';
 import { Bar } from 'react-chartjs-2';
 import {
@@ -12,7 +12,6 @@ import {
   ChartOptions,
 } from 'chart.js';
 
-// Регистрируем нужные модули Chart.js
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
 interface MetricChartsProps extends Omit<Metric, 'metric_id' | 'datetime' | 'node_id'> {}
@@ -62,7 +61,7 @@ const MetricCharts: FC<MetricChartsProps> = ({ cpu_utilization, disk_utilization
   };
 
   return (
-    <div style={{ width: '400px', height: '50px' }}>
+    <div style={{ width: '150px', height: '50px' }}>
       <Bar options={options} data={data} />
     </div>
   );
