@@ -5,11 +5,11 @@ import GroupsList from "./GroupsList";
 
 const GroupInfo: FC = () => {
   return (
-    <>
+    <div className="info-page__group-info">
       <ServiceStatusInfo />
       <GroupStatusInfo />
       <GroupsList />
-    </>
+    </div>
   );
 };
 

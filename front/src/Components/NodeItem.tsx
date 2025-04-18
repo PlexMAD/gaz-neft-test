@@ -24,14 +24,20 @@ const NodeItem: FC<NodeItemProps> = ({node}) => {
     const metricForNode = Object.values(metrics.entities).find((metric) => metric.node_id === node.id)
     if (!metricForNode) return null;
     return (
-        <div style={{display: 'flex', gap: 10}}>
-            <div style={{backgroundColor: node.status.color, width: 15, height: 15, borderRadius: 30}}></div>
-            <p>{node.caption}</p>
-            <p style={{color: returnColor(metricForNode.cpu_utilization)}}>CPU {metricForNode.cpu_utilization}</p>
-            <p style={{color: returnColor(metricForNode.disk_utilization)}}>disk {metricForNode.disk_utilization}</p>
-            <p style={{color: returnColor(metricForNode.memory_utilization)}}>memory {metricForNode.memory_utilization}</p>
+        <li className='info-page__node-list'>
+            <div className="info-page__node-short-info">
+                <div>
+                    <div style={{backgroundColor: node.status.color, width: 15, height: 15, borderRadius: 30, display: 'inline-block'}}></div>
+                    <p className='info-page__node-header'>{node.caption}</p>
+                </div>
+                <div className='info-page__node-metrics'>
+                    <p style={{color: returnColor(metricForNode.cpu_utilization)}}>CPU {metricForNode.cpu_utilization}</p>
+                    <p style={{color: returnColor(metricForNode.disk_utilization)}}>disk {metricForNode.disk_utilization}</p>
+                    <p style={{color: returnColor(metricForNode.memory_utilization)}}>memory {metricForNode.memory_utilization}</p>
+                </div>
+            </div>
             <NodeItemInfo node={node} metricForNode={metricForNode}/>
-        </div>
+        </li>
     );
 };
 

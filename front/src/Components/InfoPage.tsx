@@ -49,7 +49,6 @@ const InfoPage = () => {
 
   return (
     <>
-      <h1>Текущий час: {currentHour} (Обновление каждую минуту)</h1>
       <div className="info-page">
         <InfoColumn child={GroupInfo}/>
         <InfoColumn child={NodeList}/>

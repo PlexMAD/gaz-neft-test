@@ -10,7 +10,7 @@ const GroupStatusInfo: FC = () => {
 
   return (
     <div>
-      <h3>Статус выбранной группы:</h3>
+      <h3 className='info-page__group-header'>Статус выбранной группы:</h3>
       <p>{status?.description ?? 'Группа не выбрана'}</p>
       <div style={{ width: 50, height: 50, backgroundColor: color }} />
     </div>

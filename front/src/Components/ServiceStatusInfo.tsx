@@ -12,7 +12,7 @@ const ServiceStatusInfo = () => {
 
   return (
     <div>
-      <h3>Общая информация о статусе сервиса:</h3>
+      <h3 className='info-page__service-header'>Общая информация о статусе сервиса:</h3>
       <p>{status?.description ?? 'Нет данных'}</p>
       <div style={{ width: 50, height: 50, backgroundColor: color }} />
     </div>

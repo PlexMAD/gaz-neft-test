@@ -14,7 +14,7 @@ const GroupsList: FC = () => {
   const isSelected = (id: GroupId) => id === selectedGroupId;
   return (
     <div>
-      <p style={{ cursor: 'pointer', color: selectedGroupId ?  undefined :  'violet'}} onClick={() =>
+      <p style={{ cursor: 'pointer', color: selectedGroupId ?  undefined :  '#D7B377'}} onClick={() =>
             dispatch({
               type: 'groupSelected',
               payload: { group_id: undefined },
@@ -29,7 +29,7 @@ const GroupsList: FC = () => {
               payload: { group_id: group.id },
             } satisfies GroupSelectedAction)
           }
-          style={{ cursor: 'pointer', color: isSelected(group.id) ? 'violet' : undefined }}
+          style={{ cursor: 'pointer', color: isSelected(group.id) ? '#D7B377' : undefined }}
         >
           {group.name}
         </p>

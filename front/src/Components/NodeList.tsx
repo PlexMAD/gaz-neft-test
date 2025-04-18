@@ -11,11 +11,11 @@ const NodeList: FC = () => {
         .flatMap(group => group.nodes);
     
     return (
-        <div>
+        <ul>
             {nodes.map((node) => (
                 <NodeItem node={node} key={node.id}/>
             ))}
-        </div>
+        </ul>
     );
 };
 

@@ -49,10 +49,10 @@ export const options: ChartOptions<'bar'> = {
 
 const MetricCharts: FC<MetricChartsProps> = ({ cpu_utilization, disk_utilization, memory_utilization }) => {
   const data = {
-    labels: ['CPU', 'Memory', 'Disk'],
+    labels: ['CPU', 'Disk', 'Memory'],
     datasets: [
       {
-        data: [cpu_utilization, memory_utilization, disk_utilization],
+        data: [cpu_utilization, disk_utilization, memory_utilization],
         backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],
         borderRadius: 1,
         barThickness: 10, 
